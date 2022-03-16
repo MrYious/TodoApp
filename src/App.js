@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ThemeModeContext } from './context/ThemeModeContext';
 import { CssBaseline } from '@mui/material';
 
-function App() {
+export default function App() {
   //State for the current mode [dark or light]
   const [mode, setMode] = useState('light');
 
@@ -58,4 +58,4 @@ function App() {
   </>);
 }
 
-export default App;
+

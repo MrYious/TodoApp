@@ -1,14 +1,7 @@
-import { Grid, IconButton, makeStyles, TextField } from "@mui/material";
-import { useTheme } from "@mui/system";
-import { useContext } from "react";
-import { ThemeModeContext } from "../context/ThemeModeContext";
-import { AddCircle } from '@mui/icons-material';
-import { red } from "@mui/material/colors";
+import { Grid } from "@mui/material";
+import Header from "./Header";
 
 export default function ToDo (){
-
-    const handleToggleThemeMode = useContext(ThemeModeContext);
-    const theme = useTheme();
 
     return <>
         <Grid 
@@ -16,7 +9,6 @@ export default function ToDo (){
             justifyContent="center"
             alignContent={'center'}
             sx={{
-                backgroundColor: 'gray',
                 minHeight: '100vh',
             }}
         >
@@ -30,7 +22,7 @@ export default function ToDo (){
                     bgcolor: 'red',
                 }}
             >   
-                <Grid item> Content </Grid>
+                <Header/>
                 {/* Header + theme toggle*/}
                 {/* Todo Input*/}
                 {/* Todo List*/}

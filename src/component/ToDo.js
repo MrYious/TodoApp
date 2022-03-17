@@ -41,14 +41,12 @@ export default function ToDo (){
                     //bgcolor: 'gray',                        
                 }}
             >   
-                <Paper elevation={10} sx={{height: '100%', width: '100%', padding: 5,}}>
+                <Paper elevation={10} sx={{height: '100%', width: '100%', padding: 4, backgroundColor: 'red'}}>     
                     <Header />
                     <Input tasks={tasks} addTask={addTask} />
-                    {/* Todo Input*/}
-                    {/* Todo List*/}
-                </Paper>
-                
-
+                    
+                    {/* Todo Input*/}                    
+                </Paper>               
             </Grid>               
         </Grid>
     </>;

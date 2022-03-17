@@ -1,7 +1,22 @@
 import { Grid, Paper } from "@mui/material";
+import { useState } from "react";
 import Header from "./Header";
+import Input from "./Input";
+
+
+const initTasks = [
+    {   
+        uid: 0,              //
+        name: "",           // String
+        completed: false,   // true | false
+        priority: 0,        // 1 - 3
+        date: "",
+    },
+]
 
 export default function ToDo (){    
+
+    const [tasks, setTasks] = useState(initTasks);
 
     return <>
         <Grid 
@@ -25,11 +40,11 @@ export default function ToDo (){
             >   
                 <Paper elevation={10} sx={{height: '100%', width: '100%', padding: 5,}}>
                     <Header />
+                    <Input tasks={tasks} />
+                    {/* Todo Input*/}
+                    {/* Todo List*/}
                 </Paper>
                 
-                {/* Header + theme toggle*/}
-                {/* Todo Input*/}
-                {/* Todo List*/}
 
             </Grid>               
         </Grid>

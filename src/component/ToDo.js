@@ -26,10 +26,9 @@ export default function ToDo (){
         <Grid 
             container 
             justifyContent="center"
-            alignContent={'center'}
+            alignContent="center"
             sx={{
-                minHeight: '100vh',                
-                //bgcolor: 'gray',          
+                minHeight: '100vh',          
             }}
         >            
             <Grid 
@@ -37,7 +36,7 @@ export default function ToDo (){
                 container
                 direction={'column'}
                 justifyContent={'center'}
-                xs={9} md={6}
+                xs={11} md={7} lg={5}
                 sx={{
                     //bgcolor: 'gray',                        
                 }}

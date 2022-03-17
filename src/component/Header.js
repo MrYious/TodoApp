@@ -7,36 +7,15 @@ import { DarkModeRounded, LightModeRounded } from "@mui/icons-material";
 export default function Header (){
     const handleToggleThemeMode = useContext(ThemeModeContext);
     const theme = useTheme();
-    return <>
-        <Grid 
-            item
-            container 
-            xs={12}
-            justifyContent={'center'}
-            sx={{
-                backgroundColor: 'white',
-            }}
-        >
-            <Grid 
-                item
-                xs={4}
-                justifyContent={'center'}
-                fontSize={'large'}
-                sx={{
-                    backgroundColor: 'blue',
-                    textAlign: 'center',
-                    
-                }}
-                
-            >   
-                <Typography variant="h3">                                     
-                    Todo App                    
-                </Typography>  
-                <IconButton size="large" onClick={handleToggleThemeMode.toggleThemeMode}>
-                    {theme.palette.mode === 'light' ? <DarkModeRounded fontSize="medium" /> : <LightModeRounded/>}
+    
+    return <>        
+        <Grid item xs={12} sx={{textAlign: 'center',}}>
+            <Typography variant="h4" component={'span'}>                                     
+                ToDo List
+                <IconButton onClick={handleToggleThemeMode.toggleThemeMode}>
+                    {theme.palette.mode === 'light' ? <DarkModeRounded /> : <LightModeRounded/>}
                 </IconButton>
-                               
-            </Grid>    
-        </Grid>
+            </Typography> 
+        </Grid>                  
     </>;
 }

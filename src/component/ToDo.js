@@ -1,7 +1,7 @@
-import { Grid } from "@mui/material";
+import { Grid, Paper } from "@mui/material";
 import Header from "./Header";
 
-export default function ToDo (){
+export default function ToDo (){    
 
     return <>
         <Grid 
@@ -9,26 +9,29 @@ export default function ToDo (){
             justifyContent="center"
             alignContent={'center'}
             sx={{
-                minHeight: '100vh',
+                minHeight: '100vh',                
+                //bgcolor: 'gray',          
             }}
-        >
+        >            
             <Grid 
                 item 
                 container
+                direction={'column'}
                 justifyContent={'center'}
-                xs={9} md={6} 
-                p={5} 
+                xs={9} md={6}  
                 sx={{
-                    bgcolor: 'red',
+                    //bgcolor: 'gray',                        
                 }}
             >   
-                <Header/>
+                <Paper elevation={10} sx={{height: '100%', width: '100%', padding: 5,}}>
+                    <Header />
+                </Paper>
+                
                 {/* Header + theme toggle*/}
                 {/* Todo Input*/}
                 {/* Todo List*/}
 
-            </Grid>            
+            </Grid>               
         </Grid>
     </>;
 }
-{/* */}

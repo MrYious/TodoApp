@@ -34,18 +34,17 @@ export default function ToDo (){
             <Grid 
                 item 
                 container
-                direction={'column'}
                 justifyContent={'center'}
                 xs={11} md={7} lg={5}
                 sx={{
                     //bgcolor: 'gray',                        
                 }}
-            >   
-                <Paper elevation={10} sx={{height: '100%', width: '100%', padding: 4, backgroundColor: 'red'}}>     
+            >
+                <Paper elevation={10} sx={{height: '100%', width: '100%', padding: 4,}} >     
                     <Header />
                     <Input tasks={tasks} addTask={addTask} />
                     
-                    {/* Todo Input*/}                    
+                    {/* Todo Input*/}
                 </Paper>               
             </Grid>               
         </Grid>

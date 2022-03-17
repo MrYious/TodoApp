@@ -2,6 +2,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useState } from 'react';
 import { ThemeModeContext } from './context/ThemeModeContext';
 import { CssBaseline } from '@mui/material';
+import ToDo from './component/ToDo';
 
 export default function App() {
   //State for the current mode [dark or light]
@@ -52,7 +53,7 @@ export default function App() {
     <ThemeModeContext.Provider value={themeMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-        
+        <ToDo/>
       </ThemeProvider>
     </ThemeModeContext.Provider>
   </>);

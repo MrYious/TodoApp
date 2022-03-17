@@ -6,7 +6,7 @@ import Input from "./Input";
 
 const initTasks = [
     {   
-        id: 0,              //
+        id: 1,              //
         text: "",           // String
         completed: false,   // true | false
         priority: 0,        // 1 - 3
@@ -18,13 +18,18 @@ export default function ToDo (){
 
     const [tasks, setTasks] = useState(initTasks);
 
-    const addTask = (task) => {
-        //setTasks({...tasks, task});
-        console.log(getLatestId());
+    const addTask = (task, priority) => {
+        setTasks([...tasks, {
+            id: getLatestId() + 1,
+            text: task,
+            completed: false,
+            priority: priority,
+            date: ""
+        }]);
     };
 
     const getLatestId = () =>{
-        console.log(tasks.sort((a,b) => a.id - b.id));
+        tasks.sort((a,b) => a.id - b.id);
         return tasks[tasks.length-1].id;
     };
 

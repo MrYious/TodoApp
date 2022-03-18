@@ -73,15 +73,13 @@ export default function ToDo (){
                 container
                 justifyContent={'center'}
                 xs={11} md={7} lg={5}
-                sx={{
-                    //bgcolor: 'gray',                        
-                }}
             >
                 <Paper elevation={10} sx={{height: '100%', width: '100%', padding: 4,}} >     
                     <Header />
                     <Input addTask={addTask} />
                     <TaskList tasks={tasks} handleToggleComplete={handleToggleComplete}/>
-                </Paper>               
+                </Paper>
+                         
             </Grid>               
         </Grid>
     </>;

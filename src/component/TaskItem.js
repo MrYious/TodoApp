@@ -1,8 +1,8 @@
 import { Checkbox, Divider, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { Delete, Edit } from "@mui/icons-material";
+import { red, green } from '@mui/material/colors';
 
 export default function TaskItem ({task, handleToggleComplete}) {
-
     const labelId = "label-" + task.id;
     const secondaryText = () => {
         switch(task.priority){
@@ -26,10 +26,10 @@ export default function TaskItem ({task, handleToggleComplete}) {
             key={labelId}
             secondaryAction={<>      
                 <IconButton edge="end" aria-label="edit">
-                    <Edit />
+                    <Edit sx={{ color: green[500], }} />
                 </IconButton>      
                 <IconButton edge="end" aria-label="delete">
-                    <Delete />
+                    <Delete sx={{ color: red[500] }} />
                 </IconButton>  
             </>}
         >
@@ -41,7 +41,15 @@ export default function TaskItem ({task, handleToggleComplete}) {
                         disableRipple
                     />
                 </ListItemIcon>
-                <ListItemText id={labelId} primary={task.text} secondary={secondaryText()} />
+                <ListItemText 
+                    id={labelId} 
+                    primary={task.text} 
+                    secondary={secondaryText()}
+                    tex
+                    sx={{
+                        textDecorationLine: task.completed ? 'line-through' : 'none',
+                    }}
+                />
             </ListItemButton>
         </ListItem>
         <Divider />

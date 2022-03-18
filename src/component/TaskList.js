@@ -6,10 +6,8 @@ export default function TaskList ({tasks, handleToggleComplete}) {
         <Grid 
             item
             xs={12}
-            sx={{
-                marginTop: 2,
-            }}
-        >   
+            p={2}
+        >
             <List sx={{ width: '100%',}}>
                 {   tasks
                     .sort((a,b) => b.priority - a.priority)

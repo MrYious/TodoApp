@@ -35,7 +35,7 @@ export default function App() {
       : {
           // Dark Mode
           primary: {
-            main: '#00796b',
+            main: '#64ffda',
           },
           secondary: {
             main: '#311b92',

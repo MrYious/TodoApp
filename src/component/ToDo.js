@@ -1,5 +1,5 @@
 import { Grid, Paper } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./Header";
 import Input from "./Input";
 import TaskList from "./TaskList";
@@ -16,15 +16,15 @@ const initTasks = [
     {   
         id: 2,              //
         text: "Sample 2",   // String
-        completed: true,   // true | false
-        priority: 1,        // 1 - 3
+        completed: true,    // true | false
+        priority: 2,        // 1 - 3
         date: "",
     },
     {   
         id: 3,              //
         text: "Sample 3",   // String
         completed: false,   // true | false
-        priority: 1,        // 1 - 3
+        priority: 3,        // 1 - 3
         date: "",
     },
     

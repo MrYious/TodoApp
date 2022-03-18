@@ -11,7 +11,9 @@ export default function TaskList ({tasks}) {
             }}
         >   
             <List sx={{ width: '100%',}}>
-                {tasks.map((task) => {              
+                {   tasks
+                    .sort((a,b) => b.priority - a.priority)
+                    .map((task) => {              
                     return <TaskItem key={task.id} task={task}/>
                 })}
             </List>

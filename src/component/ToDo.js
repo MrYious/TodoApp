@@ -8,11 +8,26 @@ import TaskList from "./TaskList";
 const initTasks = [
     {   
         id: 1,              //
-        text: "",           // String
+        text: "Sample 1",   // String
         completed: false,   // true | false
-        priority: 0,        // 1 - 3
+        priority: 1,        // 1 - 3
         date: "",
     },
+    {   
+        id: 2,              //
+        text: "Sample 2",   // String
+        completed: true,   // true | false
+        priority: 1,        // 1 - 3
+        date: "",
+    },
+    {   
+        id: 3,              //
+        text: "Sample 3",   // String
+        completed: false,   // true | false
+        priority: 1,        // 1 - 3
+        date: "",
+    },
+    
 ]
 
 export default function ToDo (){    

@@ -6,8 +6,8 @@ import { useState } from "react";
 
 export default function Input ({ addTask }){
 
-    const [task, setTask] = useState('');
-    const [priority, setPriority] = useState(0);
+    const [task, setTask] = useState("");
+    const [priority, setPriority] = useState(2);
     
     const handleAddTask = () => {
         if(task && task !== "" && priority !== 0){ 

@@ -4,35 +4,9 @@ import Header from "./Header";
 import Input from "./Input";
 import TaskList from "./TaskList";
 
-
-const initTasks = [
-    {   
-        id: 1,              //
-        text: "Sample 1",   // String
-        completed: false,   // true | false
-        priority: 1,        // 1 - 3
-        date: "",
-    },
-    {   
-        id: 2,              //
-        text: "Sample 2",   // String
-        completed: true,    // true | false
-        priority: 2,        // 1 - 3
-        date: "",
-    },
-    {   
-        id: 3,              //
-        text: "Sample 3",   // String
-        completed: false,   // true | false
-        priority: 3,        // 1 - 3
-        date: "",
-    },
-    
-]
-
 export default function ToDo (){    
 
-    const [tasks, setTasks] = useState(initTasks);
+    const [tasks, setTasks] = useState([]);
 
     const addTask = (task, priority) => {
         setTasks([...tasks, {
@@ -40,7 +14,6 @@ export default function ToDo (){
             text: task,
             completed: false,
             priority: priority,
-            date: ""
         }]);
     };
 
@@ -90,9 +63,8 @@ export default function ToDo (){
                         tasks={tasks} 
                         handleToggleComplete={handleToggleComplete} 
                         deleteTask={deleteTask}
-                    />
+                    />                    
                 </Paper>
-
             </Grid>               
         </Grid>
     </>;

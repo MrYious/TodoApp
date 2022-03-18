@@ -1,7 +1,3 @@
 task item 
-    toggle- strikethrough text
-    delete button
     edit button
 
-style
-    dark/light mode primary colors

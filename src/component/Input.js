@@ -2,13 +2,15 @@ import { FormControl, Grid, IconButton, InputLabel, MenuItem, Select, TextField 
 import { AddOutlined } from "@mui/icons-material";
 import { useState } from "react";
 
+
+
 export default function Input ({ tasks, addTask }){
 
     const [task, setTask] = useState('');
     const [priority, setPriority] = useState(0);
     
     const handleAddTask = () => {
-        if(task && task !== ""){ 
+        if(task && task !== "" && priority !== 0){ 
             addTask(task, priority);
         }
     };

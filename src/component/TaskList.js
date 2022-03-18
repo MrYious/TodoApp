@@ -1,7 +1,7 @@
 import { Grid, List } from "@mui/material";
 import TaskItem from "./TaskItem";
 
-export default function TaskList ({tasks}) {
+export default function TaskList ({tasks, handleToggleComplete}) {
     return <>
         <Grid 
             item
@@ -14,7 +14,7 @@ export default function TaskList ({tasks}) {
                 {   tasks
                     .sort((a,b) => b.priority - a.priority)
                     .map((task) => {              
-                    return <TaskItem key={task.id} task={task}/>
+                    return <TaskItem key={task.id} task={task} handleToggleComplete={handleToggleComplete}/>
                 })}
             </List>
         </Grid>

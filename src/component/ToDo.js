@@ -1,5 +1,5 @@
 import { Grid, Paper } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Header from "./Header";
 import Input from "./Input";
 import TaskList from "./TaskList";
@@ -44,6 +44,16 @@ export default function ToDo (){
         }]);
     };
 
+    const handleToggleComplete = (id) => {
+        const editedTaskList = tasks.map(task => {
+            if (id === task.id) {
+                return {...task, completed: !task.completed}
+            }
+            return task;
+        });
+        setTasks(editedTaskList);
+    }
+
     const getLatestId = () =>{
         tasks.sort((a,b) => a.id - b.id);
         return tasks[tasks.length-1].id;
@@ -70,7 +80,7 @@ export default function ToDo (){
                 <Paper elevation={10} sx={{height: '100%', width: '100%', padding: 4,}} >     
                     <Header />
                     <Input addTask={addTask} />
-                    <TaskList tasks={tasks} />
+                    <TaskList tasks={tasks} handleToggleComplete={handleToggleComplete}/>
                 </Paper>               
             </Grid>               
         </Grid>

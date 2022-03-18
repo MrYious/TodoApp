@@ -1,7 +1,7 @@
 import { Checkbox, Divider, IconButton, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { Delete, Edit } from "@mui/icons-material";
 
-export default function TaskItem ({task}) {
+export default function TaskItem ({task, handleToggleComplete}) {
 
     const labelId = "label-" + task.id;
     const secondaryText = () => {
@@ -15,11 +15,6 @@ export default function TaskItem ({task}) {
             default:
                 return "error";
         }
-    }
-
-
-    const handleTaskClick = () =>{
-        console.log(task);
     }
 
     return <>
@@ -38,7 +33,7 @@ export default function TaskItem ({task}) {
                 </IconButton>  
             </>}
         >
-            <ListItemButton onClick={handleTaskClick}>
+            <ListItemButton onClick={() => handleToggleComplete(task.id)}>
                 <ListItemIcon>
                     <Checkbox
                         edge="start"

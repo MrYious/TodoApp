@@ -46,7 +46,6 @@ export default function ToDo (){
 
     const deleteTask = (id) => {
         const newTasks = tasks.filter((task) => task.id !== id);
-        console.log([...tasks, newTasks]);
         setTasks(newTasks); 
     }
 
@@ -61,7 +60,11 @@ export default function ToDo (){
     }
 
     const getLatestId = () =>{
-        tasks.sort((a,b) => a.id - b.id);
+        if(tasks.length === 0){
+            return 1;
+        }else{            
+            tasks.sort((a,b) => a.id - b.id);
+        }
         return tasks[tasks.length-1].id;
     };
 

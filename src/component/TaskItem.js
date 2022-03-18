@@ -2,8 +2,9 @@ import { Checkbox, Divider, IconButton, ListItem, ListItemButton, ListItemIcon, 
 import { Delete, Edit } from "@mui/icons-material";
 import { red, green } from '@mui/material/colors';
 
-export default function TaskItem ({task, handleToggleComplete}) {
+export default function TaskItem ({task, handleToggleComplete, deleteTask}) {
     const labelId = "label-" + task.id;
+
     const secondaryText = () => {
         switch(task.priority){
             case 1:
@@ -17,6 +18,10 @@ export default function TaskItem ({task, handleToggleComplete}) {
         }
     }
 
+    const handleDeleteTask = () => {
+        deleteTask(task.id);
+    }
+
     return <>
     <Divider />
         <ListItem
@@ -28,7 +33,7 @@ export default function TaskItem ({task, handleToggleComplete}) {
                 <IconButton edge="end" aria-label="edit">
                     <Edit sx={{ color: green[500], }} />
                 </IconButton>      
-                <IconButton edge="end" aria-label="delete">
+                <IconButton edge="end" aria-label="delete" onClick={handleDeleteTask}>
                     <Delete sx={{ color: red[500] }} />
                 </IconButton>  
             </>}
@@ -45,7 +50,6 @@ export default function TaskItem ({task, handleToggleComplete}) {
                     id={labelId} 
                     primary={task.text} 
                     secondary={secondaryText()}
-                    tex
                     sx={{
                         textDecorationLine: task.completed ? 'line-through' : 'none',
                     }}

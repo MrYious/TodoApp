@@ -44,6 +44,12 @@ export default function ToDo (){
         }]);
     };
 
+    const deleteTask = (id) => {
+        const newTasks = tasks.filter((task) => task.id !== id);
+        console.log([...tasks, newTasks]);
+        setTasks(newTasks); 
+    }
+
     const handleToggleComplete = (id) => {
         const editedTaskList = tasks.map(task => {
             if (id === task.id) {
@@ -77,9 +83,13 @@ export default function ToDo (){
                 <Paper elevation={10} sx={{height: '100%', width: '100%', padding: 4,}} >     
                     <Header />
                     <Input addTask={addTask} />
-                    <TaskList tasks={tasks} handleToggleComplete={handleToggleComplete}/>
+                    <TaskList 
+                        tasks={tasks} 
+                        handleToggleComplete={handleToggleComplete} 
+                        deleteTask={deleteTask}
+                    />
                 </Paper>
-                         
+
             </Grid>               
         </Grid>
     </>;

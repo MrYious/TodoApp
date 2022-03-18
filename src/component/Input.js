@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 
-export default function Input ({ tasks, addTask }){
+export default function Input ({ addTask }){
 
     const [task, setTask] = useState('');
     const [priority, setPriority] = useState(0);
@@ -67,9 +67,7 @@ export default function Input ({ tasks, addTask }){
                 <IconButton onClick={handleAddTask}>
                     <AddOutlined sx={{fontSize: 40}}/>
                 </IconButton>
-            </Grid>               
-            
-            
+            </Grid>
         </Grid>
     </>;
 }

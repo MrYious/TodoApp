@@ -1,2 +1,7 @@
 task item 
-    onclick checkbox
+    toggle- strikethrough text
+    delete button
+    edit button
+
+style
+    dark/light mode primary colors

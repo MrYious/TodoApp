@@ -12,6 +12,7 @@ export default function Input ({ addTask }){
     const handleAddTask = () => {
         if(task && task !== "" && priority !== 0){ 
             addTask(task, priority);
+            reset();
         }
     };
 
@@ -21,7 +22,12 @@ export default function Input ({ addTask }){
 
     const handlePriorityChange = (e) =>{
         setPriority(e.target.value);
-    };    
+    };
+
+    const reset = () => {
+        setTask("");
+        setPriority(2);
+    }
 
     return <>
         <Grid

@@ -1,3 +1,17 @@
+# ToDo App
+
+- Add Task
+- Basic priority-based order
+- Check/Uncheck tasks based on completion
+- Dark/Light mode
+- MUI components
+
+## Screenshots
+![DarkMode](https://github.com/MrYious/TodoApp/blob/master/resource/Dark-Screenshot.png?raw=true)
+
+![LightMode](https://github.com/MrYious/TodoApp/blob/master/resource/Light-Screenshot.png?raw=true)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
